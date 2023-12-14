@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Gifts - Happy Birthday, Babe 😊❤️</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(to bottom, #FFB6C1, #87CEFA); /* Gradient colors */
+        }
+        h1, #giftBanner, #giftImage {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: flyIn 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards; /* Combined animations */
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #giftBanner {
+            font-size: 24px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        #giftImage {
+            max-width: 80%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation-delay: 0.5s; /* Delay the animation for a smoother effect */
+        }
+        #claimButton {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 20px;
+            background: linear-gradient(45deg, #ff69b4, #87CEFA); /* Gradient background */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px; /* Rounded corners */
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+            margin: 20px auto; /* Center the button */
+            border: none; /* Remove default button border */
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #claimButton:hover {
+            background: linear-gradient(45deg, #d46a9c, #7ca8d3); /* Gradient background on hover */
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.8); /* Glowing effect */
+            color: #fff;
+        }
+
+        /* Modal Styles */
+        #myModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        #modalContent {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        #closeModal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #closeModal:hover,
+        #closeModal:focus {
+            color: black;
+            text-decoration: none;
+        }
+        h2 {
+            color: #3498db;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        @keyframes flyIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            #giftImage {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday Gifts😍!</h1>
+    <p id="giftBanner">Grab your Birthday Gifts Here!</p>
+    <img id="giftImage" src="gift_box.jpg" alt="Gift Box">
+
+    <a id="claimButton" href="#" onclick="openModal()">Claim Gifts</a>
+
+    <footer>
+        <p>Created with love by Quantumsoft</p>
+    </footer>
+
+    <!-- Modal Content -->
+    <div id="myModal">
+        <div id="modalContent">
+            <span id="closeModal" onclick="closeModal()">X</span>
+            <h2>Special Birthday Surprises</h2>
+            <p>Is 0750375757 the number?</p>
+            <img src="mpesa.png" alt="Surprise Image">
+            <p>Your gift will be sent shortly... please relax this process is automated!</p>
+            <p>More gifts to come :)</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Your existing JavaScript code
+        });
+
+        function openModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Happy Birthday, Babe 😊❤️</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to bottom, #FFB6C1, #87CEFA), url('subtle-pattern.jpg'); /* Gradient colors and background image */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        h1, #gallery, #gallery-intro {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: flyIn 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards; /* Combined animations */
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #gallery-intro {
+            font-size: 18px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .galleryImage {
+            position: relative;
+            width: 200px; /* Set a fixed width */
+            height: 300px; /* Set a fixed height */
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .galleryImage img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            cursor: pointer; /* Add cursor pointer for clickable effect */
+            transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+        }
+        .galleryImage:hover img {
+            transform: scale(1.1); /* Enlarge the image on hover */
+            border-radius: 0; /* Remove border-radius on hover for a smooth transition */
+        }
+        .banner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #nextButton {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background: linear-gradient(45deg, #ff69b4, #87CEFA); /* Gradient background */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px; /* Rounded corners */
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+            margin-top: 20px;
+            border: none; /* Remove default button border */
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: flyIn 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards; /* Animation effect */
+        }
+        #nextButton:hover {
+            background: linear-gradient(45deg, #d46a9c, #7ca8d3); /* Gradient background on hover */
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.8); /* Glowing effect */
+            color: #fff;
+        }
+
+        /* Full-size image layout */
+        #lightboxContainer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        #fullSizeImage {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 15px; /* Rounded corners */
+        }
+        #closeButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: #fff;
+            background-color: #e74c3c;
+            padding: 10px 20px;
+            border-radius: 10px; /* Rounded corners */
+            cursor: pointer;
+            z-index: 1;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #closeButton:hover {
+            background-color: #c0392b; /* Darker shade on hover */
+        }
+
+        @keyframes flyIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            #nextButton {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>😊💞😊💞😊💞</h1>
+    <h1>Our Gallery</h1>
+    <!-- <p id="gallery-intro">Here are some of my best gallery picks😁</p> -->
+    <div id="gallery"></div>
+    
+    <a id="nextButton" href="gifts.html">Next</a>
+
+    <footer>
+        <p>Created with love by Quantumsoft</p>
+    </footer>
+
+    <!-- Full-size image layout -->
+    <div id="lightboxContainer">
+        <span id="closeButton" onclick="closeLightbox()">X</span>
+        <img id="fullSizeImage" src="" alt="Full Size Image">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Images and captions
+            const images = [
+                { src: "image2.jpg", caption: "First impression, damn this drank me 😂" },
+                { src: "image3.jpg", caption: "My favorite selfie of you 😉" },
+                { src: "image4.jpg", caption: "I wandaaa Eh eeeh!" },
+                { src: "image5.jpg", caption: "Looks hot for some reason :)" },
+                { src: "image6.jpg", caption: "Mwalimu wa math hapa ni wapi😂" },
+                { src: "image7.jpg", caption: "🤭😂😂" },
+                { src: "image8.jpg", caption: "Damn the kiss!" },
+                { src: "image9.jpg", caption: "You said this is your favorite? ❤️" },
+                { src: "image10.jpg", caption: "Mine 😍" },
+                { src: "image11.jpg", caption: "We better go back there😂😂" },
+                { src: "image12.jpg", caption: "Your wallpaper, aww" },
+                { src: "image13.jpg", caption: "Sweet selfie!" },
+                { src: "image14.jpg", caption: "Ahaa! Remember this?" },
+                { src: "image15.jpg", caption: "My fav selfie of us 😁" },
+                { src: "image16.jpg", caption: "Good one eh?" },
+                { src: "image17.jpg", caption: "Second Impression, so sweet😊" },
+                { src: "image18.jpg", caption: "Mirroring hapa na pale, we need iPhones🤣" },
+                { src: "image19.jpg", caption: "The best place for me, dope!" },
+                { src: "image20.jpg", caption: "Dunno what's up here😂" },
+                { src: "image21.jpg", caption: "Babe😍" }
+            ];
+
+            const galleryContainer = document.getElementById("gallery");
+
+            images.forEach((image, index) => {
+                const galleryImage = document.createElement("div");
+                galleryImage.className = "galleryImage";
+
+                const imgElement = document.createElement("img");
+                imgElement.src = image.src;
+                imgElement.alt = "Memorable moment " + (index + 1);
+                imgElement.addEventListener("click", () => openLightbox(image.src, image.caption));
+
+                const banner = document.createElement("div");
+                banner.className = "banner";
+                banner.textContent = image.caption;
+
+                galleryImage.appendChild(imgElement);
+                galleryImage.appendChild(banner);
+                galleryContainer.appendChild(galleryImage);
+            });
+        });
+
+        function openLightbox(src, caption) {
+            const lightboxContainer = document.getElementById("lightboxContainer");
+            const fullSizeImage = document.getElementById("fullSizeImage");
+
+            fullSizeImage.src = src;
+            fullSizeImage.alt = caption;
+            lightboxContainer.style.display = "flex";
+        }
+
+        function closeLightbox() {
+            const lightboxContainer = document.getElementById("lightboxContainer");
+            lightboxContainer.style.display = "none";
+        }
+    </script>
+</body>
+</html>

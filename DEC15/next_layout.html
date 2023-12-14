@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Layout - Happy Birthday, Babe 😊❤️</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(to bottom, #FFB6C1, #87CEFA); /* Gradient colors */
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('subtle-pattern.jpg'); /* Add your subtle background pattern image */
+        }
+        h1, p, #birthdayImage {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: flyIn 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards; /* Combined animations */
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .translucent-container {
+            background-color: rgba(255, 255, 255, 0.8); /* Translucent white background */
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto; /* Center the container */
+            max-width: 800px; /* Set a maximum width */
+        }
+        p {
+            font-size: 1.2em;
+            color: #4caf50;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        #birthdayImage {
+            max-width: 60%;
+            height: auto;
+            margin: 20px auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            animation-delay: 0.5s; /* Delay the animation for a smoother effect */
+        }
+        .nextButton {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background: linear-gradient(45deg, #ff69b4, #87CEFA); /* Gradient background */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px; /* Rounded corners */
+            transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin-top: 20px;
+            border: none; /* Remove default button border */
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: flyIn 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards; /* Animation effect */
+        }
+        .nextButton:hover {
+            background: linear-gradient(45deg, #d46a9c, #7ca8d3); /* Gradient background on hover */
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.8); /* Glowing effect */
+        }
+        footer {
+            margin-top: 40px;
+        }
+        footer p {
+            color: #fff;
+            font-size: 0.8em;
+        }
+        @keyframes flyIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Have it Major, Sunshine!</h1>
+
+    <img id="birthdayImage" src="her_image.jpg" alt="HerImageObject">
+
+    <div class="translucent-container">
+        <p>Congratulations on hitting 21 today! How does it feel? 😂 On this special day, I wish you joy, love, and countless smiles. Your laughter is the melody that makes my heart dance, and I'm grateful to celebrate with you. 🎉 I hope your day is filled with warmth and happiness. I've designed this website to share in the joy and create beautiful memories together. Check it out!</p>
+    </div>
+
+    <a class="nextButton" href="gallery_layout.html">Next</a>
+
+    <footer>
+        <p>Created with love by Quantumsoft</p>
+    </footer>
+
+</body>
+</html>
