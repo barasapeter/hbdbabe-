@@ -30,6 +30,8 @@
         }
 
         h1, p, #turnsImage {
+            position: relative;
+            z-index: 1; /* Ensure text and images appear above the translucent material */
             opacity: 0;
             transform: translateY(-50px);
             animation: flyIn 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards; /* Combined animations */
@@ -39,6 +41,18 @@
             color: #ff69b4;
             font-size: 38px;
             margin-bottom: 20px;
+            position: relative;
+        }
+
+        h1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.5); /* Translucent white background */
+            z-index: -1;
         }
 
         p {
