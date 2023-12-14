@@ -18,14 +18,15 @@
     <meta name="twitter:title" content="Happy Birthday, Babe">
     <meta name="twitter:description" content="It's your day babe, have it major!🎉🎊✨">
     <meta name="twitter:image" content="https://hbdbabe.vercel.app/her_image.jpg">
-        
+
     <style>
         body {
             font-family: 'Verdana', sans-serif;
             text-align: center;
             margin: 0;
             padding: 40px;
-            background: linear-gradient(to bottom, #000000, #1c1c1c); /* Black Gradient */
+            background-image: url('subtle-pattern.jpg'); /* Background image */
+            background-size: cover;
         }
 
         h1, p, #turnsImage {
@@ -33,17 +34,20 @@
             transform: translateY(-50px);
             animation: flyIn 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards; /* Combined animations */
         }
+
         h1 {
             color: #ff69b4;
             font-size: 38px;
             margin-bottom: 20px;
         }
+
         p {
             font-size: 18px;
             color: #4caf50;
             margin-bottom: 20px;
             line-height: 1.6;
         }
+
         #turnsImage {
             max-width: 100%;
             height: auto;
@@ -52,6 +56,7 @@
             border-radius: 15px;
             animation-delay: 0.5s; /* Delay the animation for a smoother effect */
         }
+
         #nextButton {
             display: inline-block;
             padding: 15px 40px;
@@ -68,11 +73,13 @@
             overflow: hidden;
             opacity: 1; /* Make the button more visible */
         }
+
         #nextButton:hover {
             background: linear-gradient(45deg, #d46a9c, #7ca8d3); /* Gradient background on hover */
             box-shadow: 0 0 10px rgba(255, 105, 180, 0.8); /* Glowing effect */
             color: #fff;
         }
+
         #giftCard {
             max-width: 400px;
             margin: 20px auto;
@@ -81,6 +88,7 @@
             position: relative;
             animation: flyIn 1s ease-in-out forwards, fadeIn 1s ease-in-out forwards; /* Combined animations */
         }
+
         #redBanner {
             background-color: #e74c3c;
             color: #fff;
@@ -88,6 +96,7 @@
             text-align: center;
             font-weight: bold;
         }
+
         @keyframes flyIn {
             0% {
                 opacity: 0;
@@ -98,6 +107,7 @@
                 transform: translateY(0);
             }
         }
+
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -107,16 +117,17 @@
             }
         }
     </style>
+
     <script>
         function redirectToNextLayout() {
             window.location.href = "next_layout.html"; // Change the URL to the actual next layout
         }
     </script>
 </head>
+
 <body>
     <h1>💞😍💞😍💞😍</h1>
     <h1>HAPPY BIRTHDAY, BABY!</h1>
-<!--     <h1>BABE!</h1> -->
 
     <img id="turnsImage" src="turns.webp" alt="TurnsImageObject">
 
@@ -130,6 +141,5 @@
     <footer>
         <p>Created with love by Quantumsoft</p>
     </footer>
-
 </body>
 </html>
